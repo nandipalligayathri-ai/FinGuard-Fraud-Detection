@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FinGuard | Risk Dashboard</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><div><span class="brand">FinGuard</span><small>Financial Risk Monitoring</small></div>
+    <button id="logoutBtn" class="secondary">Logout</button></header>
+  <main>
+    <section class="welcome"><div><p class="eyebrow">MONITORING OVERVIEW</p><h1>Transaction risk dashboard</h1>
+      <p>Review unusual activity using transparent, configurable rules.</p></div>
+      <button id="refreshBtn">Refresh data</button></section>
+    <section class="cards">
+      <article class="card"><span>Total transactions</span><strong id="totalTransactions">—</strong></article>
+      <article class="card"><span>Total alerts</span><strong id="totalAlerts">—</strong></article>
+      <article class="card"><span>Pending reviews</span><strong id="pendingAlerts">—</strong></article>
+      <article class="card"><span>Transaction value</span><strong id="totalAmount">—</strong></article>
+    </section>
+    <section class="panel">
+      <div class="panel-head"><div><h2>Recent alerts</h2><p>Flags require human review; they are not fraud conclusions.</p></div>
+        <select id="statusFilter"><option value="">All statuses</option><option>PENDING</option><option>UNDER_REVIEW</option><option>CLEARED</option><option>CLOSED</option></select></div>
+      <div class="table-wrap"><table><thead><tr><th>Alert</th><th>Transaction</th><th>Risk score</th><th>Rule</th><th>Reason</th><th>Status</th><th>Action</th></tr></thead>
+      <tbody id="alertsBody"><tr><td colspan="7">Loading…</td></tr></tbody></table></div>
+    </section>
+    <section class="panel import-panel"><div><h2>Import transactions</h2><p>CSV columns: account_id, transaction_datetime, amount, transaction_type, channel, region</p></div>
+      <div class="import-controls"><input type="file" id="csvFile" accept=".csv"><button id="importBtn">Import CSV</button></div><p id="message" role="status"></p>
+    </section>
+    <p class="footnote">Demo application • Synthetic data only • Rule-based risk indicators</p>
+  </main>
+  <script src="app.js"></script>
+</body></html>
